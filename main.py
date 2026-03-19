@@ -62,7 +62,7 @@ def prob(q,r):
                     lit.append(0)
         matrix.append(lit)
     identity = np.identity(len(matrix))
-    print(matrix)
+    #print(matrix)
     M = matrix - identity
     for a in M:
         a[q] = 1
