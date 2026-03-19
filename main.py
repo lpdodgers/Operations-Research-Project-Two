@@ -72,8 +72,8 @@ def prob(q,r):
 
 
 if __name__ == '__main__':
-    print(main(14,9))
-    print(main(14,5))
+    print(f'Q and R for 14,9: {main(14,9)}')
+    print(f'What we believe to be the best: {main(14,5)}')
     p = []
     mins = 100000000
     for n in range(5,15):
@@ -86,4 +86,4 @@ if __name__ == '__main__':
                     mins = main(n,m)
                     print(n)
                     print(m)
-    print(min(p))
+    print(f'Minimum Expected Cost: {min(p)}')
