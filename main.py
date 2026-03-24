@@ -1,6 +1,6 @@
 import numpy as np
 from numpy.linalg import inv
-pi = [0,0,0,0,.00751,.00938,.00953,.04184,.12628,.15273,.1502,.18764,.19055,.08575,.03859]
+#test = [0,0,0,0,.00751,.00938,.00953,.04184,.12628,.15273,.1502,.18764,.19055,.08575,.03859]
 
 def main(q=None, r = None):
     if q <= r:
@@ -72,8 +72,7 @@ def prob(q,r):
 
 
 if __name__ == '__main__':
-    print(f'Q and R for 14,9: {main(14,9)}')
-    print(f'What we believe to be the best: {main(14,5)}')
+    print(f'Q and R for 14,9: {main(14,9)}\n')
     p = []
     mins = 100000000
     for n in range(5,15):
@@ -84,6 +83,9 @@ if __name__ == '__main__':
                 p.append(main(n,m))
                 if main(n,m) < mins:
                     mins = main(n,m)
-                    print(n)
-                    print(m)
-    print(f'Minimum Expected Cost: {min(p)}')
+                    min_q = n
+                    min_r = m
+                    print(mins)
+                    print(f'Best possible q: {n}')
+                    print(f'Best possible r: {m}\n')
+    print(f'Minimum Expected Cost: {min(p)} at q = {min_q} and r = {min_r}')
