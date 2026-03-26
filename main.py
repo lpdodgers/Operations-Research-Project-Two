@@ -75,8 +75,8 @@ if __name__ == '__main__':
     print(f'Q and R for 14,9: {main(14,9)}\n')
     p = []
     mins = 100000000
-    for n in range(5,15):
-        for m in range(5,15):
+    for n in range(2,15):
+        for m in range(2,15):
             if main(n,m) == None:
                 pass
             else:
