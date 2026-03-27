@@ -8,15 +8,16 @@ def main(q=None, r = None):
     rate = .0003365384615
     fixed_cost = 3500
     penalty_cost = 23000
+    capital = 16000
     cost = []
     pi = prob(q,r)
     for i in range((r-5), q+1):
         if i < 0:
-            cost.append(pi[q][i] * ((q-i) * 16000 + fixed_cost + penalty_cost * (0 - i)))
+            cost.append(pi[q][i] * ((q-i) * capital + fixed_cost + penalty_cost * (0 - i)))
         if i <= r:
-            cost.append(pi[q][i] * (i * rate * 16000 + (q-i) * 16000 + fixed_cost))
+            cost.append(pi[q][i] * (i * rate * capital + (q-i) * capital + fixed_cost))
         else:
-            cost.append(pi[q][i] * (i * rate * 16000))
+            cost.append(pi[q][i] * (i * rate * capital))
     expected_cost = sum(cost)
     return expected_cost
 
