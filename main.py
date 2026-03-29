@@ -77,8 +77,8 @@ if __name__ == '__main__':
     print(f'Q and R for 14,9: {main(14,9)}\n')
     p = []
     mins = 100000000
-    for n in range(2,15):
-        for m in range(2,15):
+    for n in range(2,16):
+        for m in range(2,16):
             if main(n,m) == None:
                 pass
             else:
@@ -94,8 +94,8 @@ if __name__ == '__main__':
 
     with open("table.csv", 'w',  newline='') as csvfile:
         writer = csv.writer(csvfile)
-        for n in range(2,15):
-            for m in range(2,15):
+        for n in range(2,16):
+            for m in range(2,16):
                 if main(n,m) == None:
                     pass
                 else:
