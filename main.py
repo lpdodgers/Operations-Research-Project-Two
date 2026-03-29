@@ -91,6 +91,7 @@ if __name__ == '__main__':
                     print(f'Best possible q: {n}')
                     print(f'Best possible r: {m}\n')
     print(f'Minimum Expected Cost: {min(p)} at q = {min_q} and r = {min_r}')
+
     mint = 99999999999999999
     with open("table.csv", 'w',  newline='') as csvfile:
         writer = csv.writer(csvfile)
