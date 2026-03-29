@@ -100,8 +100,6 @@ if __name__ == '__main__':
                 if main(n,m) == None:
                     pass
                 else:
-                    if main(n,m) < mint:
-                        mins = main(n,m)
-                        min_q = n
-                        min_r = m
-                        writer.writerow([n,m,mins])
+                    min_q = n
+                    min_r = m
+                    writer.writerow([n,m,main(n,m)])
