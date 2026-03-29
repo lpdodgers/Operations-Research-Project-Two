@@ -1,5 +1,6 @@
 import numpy as np
 from numpy.linalg import inv
+import csv
 #test = [0,0,0,0,.00751,.00938,.00953,.04184,.12628,.15273,.1502,.18764,.19055,.08575,.03859]
 
 def main(q=None, r = None):
@@ -90,3 +91,16 @@ if __name__ == '__main__':
                     print(f'Best possible q: {n}')
                     print(f'Best possible r: {m}\n')
     print(f'Minimum Expected Cost: {min(p)} at q = {min_q} and r = {min_r}')
+    mint = 99999999999999999
+    with open("table.csv", 'w',  newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        for n in range(2,15):
+            for m in range(2,15):
+                if main(n,m) == None:
+                    pass
+                else:
+                    if main(n,m) < mint:
+                        mins = main(n,m)
+                        min_q = n
+                        min_r = m
+                        writer.writerow([n,m,mins])
