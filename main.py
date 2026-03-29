@@ -14,7 +14,7 @@ def main(q=None, r = None):
     for i in range((r-5), q+1):
         if i < 0:
             cost.append(pi[q][i] * ((q-i) * capital + fixed_cost + penalty_cost * (0 - i)))
-        if i <= r:
+        elif i <= r:
             cost.append(pi[q][i] * (i * rate * capital + (q-i) * capital + fixed_cost))
         else:
             cost.append(pi[q][i] * (i * rate * capital))
